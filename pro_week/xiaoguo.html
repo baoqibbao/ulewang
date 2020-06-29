@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="http://at.alicdn.com/t/font_1909736_6rlqqi6yfu8.css"
+    />
+    <link rel="stylesheet" href="./css/base.css" />
+    <script src="./js/item.js"></script>
+    <script src="./js/Carousel.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+
+    <style>
+      /* #div {
+        width: 240px;
+        height: 289px;
+        position: relative;
+        margin: 10px;
+      } */
+      /* #div:hover{
+        top: -2px;
+        box-shadow:0 16px 30px -14px rgba(0,36,100,0.3);
+        box-shadow: none;
+        
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="div"></div>
+    <script>
+     /*  var data = {
+        imgSrc:
+          "https://pic4.ulecdn.com/item/user_0102/desc20200618/7847d80fdf9b57e3_-1x-1.png",
+        proName: "【百色芒果】果园直发 让利销售 新鲜小台农芒果",
+        price: "15.00",
+      };
+      var item_ = new item();
+      item_.data = data;
+      var div = document.querySelector("div");
+      // item_.appendTo(div); */
+/*       var imgSrc = [
+        "../img/banner1.jpg",
+        "../img/banner2.jpg",
+        "../img/banner3.jpg",
+        "../img/banner4.jpg",
+        "../img/banner5.jpg",
+      ];
+      var imgList = [],
+        dotList = [];
+      var time = 150;
+      var imgBox,
+        prodot,
+        pos = 0;
+      var autoBool = false;
+      init();
+      function init() {
+        var boxWrap = ce("div", {
+          width: "1200px",
+          height: "467px",
+          border: "1px solid red",
+          position: "relative",
+        });
+        createImg(boxWrap);
+        createDot(boxWrap);
+        document.body.appendChild(boxWrap);
+        setInterval(autoPlay, 16);
+        boxWrap.addEventListener("mouseenter", mouseHandler);
+        boxWrap.addEventListener("mouseleave", mouseHandler);
+      }
+      function mouseHandler(e) {
+        if (e.type == "mouseenter") {
+          autoBool = true;
+        } else if (e.type == "mouseleave") {
+          time=200;
+          autoBool = false;
+        }
+      }
+      function createImg(parent) {
+        imgBox = ce("div", {
+          width: "1200px",
+          height: "467px",
+        });
+        imgSrc.forEach(function (item, index) {
+          var img = new Image();
+          img.src = item;
+          img.style.width = "1200px";
+          img.style.height = "467px";
+          imgList.push(img);
+          if (index == 0) imgBox.appendChild(img);
+        });
+        parent.appendChild(imgBox);
+      }
+      function createDot(parent) {
+        var ul = ce("ul", {
+          position: "absolute",
+          bottom: "40px",
+          right: "315px",
+        });
+        imgSrc.forEach(function (item, index) {
+          let li = ce("li", {
+            width: "17px",
+            height: "17px",
+            backgroundColor: index == 0 ? "red" : "#fff",
+            borderRadius: "50%",
+            marginLeft: "10px",
+            float: "left",
+          });
+          if (index == 0) prodot = li;
+          dotList.push(li);
+          ul.appendChild(li);
+        });
+        parent.appendChild(ul);
+        ul.addEventListener("mouseout", ulMouseHanler);
+        ul.addEventListener("mouseover", ulMouseHanler);
+      }
+      function ulMouseHanler(e) {
+        if (e.target.nodeName !== "LI") return;
+        if (e.type == "mouseout") {
+          console.log("mouseout");
+        } else if (e.type == "mouseover") {
+          var index = dotList.indexOf(e.target);
+          pos = index;
+          imgBox.innerHTML = "";
+          imgBox.appendChild(imgList[pos]);
+          changeDot();
+        }
+      }
+      function autoPlay() {
+        if (autoBool) return;
+        changeImg();
+        changeDot();
+      }
+      function changeImg() {
+        time--;
+        if (time > 0) return;
+        time = 150;
+        pos++;
+        if(pos>imgList.length-1) pos=0;
+        imgBox.innerHTML = "";
+        imgBox.appendChild(imgList[pos]);
+      }
+      function changeDot() {
+        if (prodot) {
+          prodot.style.backgroundColor = "#fff";
+        }
+        prodot = dotList[pos];
+        prodot.style.backgroundColor = "red";
+      }
+      function ce(type, style) {
+        var ele = document.createElement(type);
+        Object.assign(ele.style, style);
+        return ele;
+      } */
+      /*
+            item();
+            function item() {
+              var box = ce("div", {
+                width: "200px",
+                height: "259px",
+                padding: "10px 19px",
+                border: "1px solid #ccc",
+              });
+              createImg(box);
+              createInfo(box);
+              createPrice(box);
+              document.body.appendChild(box);
+            }
+            function createImg(parent) {
+              var img = new Image();
+              img.src = data.imgSrc;
+              img.style.width = "200px";
+              img.style.height = "200px";
+              parent.appendChild(img);
+            }
+            function createInfo(parent) {
+              var info = ce("a", {
+                display: "block",
+                width: "200px",
+                height: "22px",
+                lineHeight: "22px",
+                color: "#333",
+                fontSize: "14px",
+                //溢出显示...
+                whiteSpace: "nowrap",
+                textOverflow: "ellipsis",
+                overflow: "hidden",
+              });
+              info.href = "javaScript:void(0)";
+              info.title = info.textContent = data.proName;
+
+              parent.appendChild(info);
+            }
+            function createPrice(parent) {
+              var p_price = ce("p", {
+                width: "200px",
+                height: "20px",
+                padding: "10px 0 0 ",
+                fontSize: "18px",
+                color: "#c52e13",
+                textAlign:"center"
+              });
+              p_price.textContent = "¥";
+              var span = ce("span", {
+                fontSize: "18px",
+                color: "#c52e13",
+                marginLeft:"4px",
+              });
+              span.textContent=data.price;
+              p_price.appendChild(span);
+              parent.appendChild(p_price);
+            }
+            function ce(type, style) {
+              var ele = document.createElement(type);
+              Object.assign(ele.style, style);
+              return ele;
+            } */
+    </script>
+  </body>
+</html>

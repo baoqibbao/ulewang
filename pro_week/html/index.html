@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://at.alicdn.com/t/font_1909736_j3ffbszbk6.css"
+    />
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../js/goodItem.js"></script>
+    <script src="../js/goodItemMin.js"></script>
+  </head>
+  <body>
+    <div class="navTop"></div>
+    <div class="topSearchWrap">
+      <div class="topSearch">
+        <a href="./index.html"><img src="../img/logo.png" alt="" /></a>
+        <div class="topRight">
+          <div class="search">
+            <form action="">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="邮特惠会员，天天享优惠！"
+              />
+              <button><i class="iconfont icon-fangdajing"></i></button>
+            </form>
+            <p>
+              <a href="#"><strong>精准扶贫</strong></a>
+              <a href="#"><strong>中国集邮</strong></a>
+              <a href="#">新鲜水果</a>
+              <a href="#">奶粉</a>
+              <a href="#">潮流女鞋</a>
+              <a href="#">洗发护发</a>
+              <a href="#">剃须刀</a>
+              <a href="#">坚果炒货</a>
+              <a href="#">纸巾</a>
+            </p>
+          </div>
+          <div class="shopCart">
+            <div class="cartFont">
+              <i class="iconfont icon-gouwuche1"></i><span>购物车</span>
+            </div>
+            <input type="text" name="num" id="num" value="0" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mainNavWrap">
+      <ul>
+        <li><a href="#">全部商品分类</a></li>
+        <li><a href="#">天天特卖</a></li>
+        <li><a href="#">优惠券</a></li>
+        <li><a href="#">海外馆</a></li>
+        <li><a href="#">邮乐农品</a></li>
+        <li><a href="#">生活缴费</a></li>
+        <li><a href="#">邮乐旅行</a></li>
+        <li><a href="#">邮特惠</a></li>
+        <li><a href="#">邮惠购</a></li>
+      </ul>
+    </div>
+    <div class="wrapper">
+      <div class="bannerWrap">
+        <div class="banner"></div>
+      </div>
+      <div class="mainTopWrap">
+        <div class="mainTop">
+          <div class="mainTopH4">
+            <h4 class="active"><span></span> 低价来袭</h4>
+            <h4><span></span>农民特卖</h4>
+          </div>
+          <ul></ul>
+          <ul></ul>
+        </div>
+      </div>
+      <div class="mainCenterBanner">
+        <div class="CenterBanner">
+          <img src="../img/banner_1.jpg" alt="" />
+        </div>
+      </div>
+      <div class="main1NavWrap">
+        <div class="main1Nav">
+          <i></i>
+          <h3>舌尖美食</h3>
+          <ul>
+            <li><a href="#">挂面</a></li>
+            <li><a href="#">鸡蛋</a></li>
+            <li><a href="#">桂圆干</a></li>
+            <li><a href="#">红枣</a></li>
+            <li><a href="#">食用油</a></li>
+            <li><a href="#">大米</a></li>
+            <li><a href="#">更多</a></li>
+          </ul>
+          <div class="main1NavRight">优质蜂蜜，质量有保证<a></a></div>
+        </div>
+      </div>
+      <div class="main1Wrap">
+        <div class="main1">
+          <div class="main1Left">
+            <a href="#"><img src="../img/c33b164ab0acd90.png" alt="" /></a>
+          </div>
+          <div class="main1Right">
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footB"></div>
+    <script src="../js/Carousel.js"></script>
+    <script>
+      $(".navTop").load("./nav.html");
+      $(".footB").load("./foot.html");
+      //
+      $.ajax({
+        type: "POST",
+        url: "../server/index_goods.php",
+        data: {},
+        dataType: "json",
+        success(data) {
+          data.forEach((item, index) => {
+            var li = ce("li", {
+              float: "left",
+              width: "236px",
+              height: "279px",
+              overflow: "hidden",
+              borderBottom: 0,
+              borderLeft: "solid 1px #f1f0ec",
+              borderTop: "solid 1px #f1f0ec",
+            });
+            var good_item = new goodItem();
+            good_item.data = item;
+            good_item.appendTo(li);
+            if (index < 5)
+              $(li).attr("data-id", index).appendTo(".mainTop>ul:eq(0)");
+            else if (index >= 5)
+              $(li).attr("data-id", index).appendTo(".mainTop>ul:eq(1)");
+          });
+        },
+      });
+      $(() => {
+        $(".mainTopH4>H4").on("mouseenter", function (e) {
+          $(e.target).addClass("active").siblings().removeClass("active");
+          if (e.target == $(".mainTopH4>H4").get(0)) {
+            console.log($(e.target));
+            $(e.target).find("span").css({ "background-position-x": "0px" });
+            $(e.target)
+              .siblings()
+              .find("span")
+              .css({ "background-position-x": "-105px" });
+            $(".mainTop ul")
+              .eq(0)
+              .css("display", "block")
+              .next()
+              .css("display", "none");
+          } else {
+            $(e.target)
+              .find("span")
+              .css({ "background-position-x": " -132px" });
+            $(e.target)
+              .siblings()
+              .find("span")
+              .css({ "background-position-x": "-25px" });
+            $(".mainTop ul")
+              .eq(0)
+              .css("display", "none")
+              .next()
+              .css("display", "block");
+          }
+        });
+      });
+
+      //舌尖美食
+       $.ajax({
+        type: "POST",
+        url: "../server/index_goods2.php",
+        data: {},
+        dataType: "json",
+        success(data) {
+          data.forEach((item, index) => {
+            var li = ce("li", {
+              float: "left",
+              width: "218px",
+              height: "279px",
+              overflow: "hidden",
+              margin: "0 0 10px 10px",
+            });
+            var good_item = new goodItemMin();
+            good_item.data = item;
+            good_item.appendTo(li);
+              $(li).attr("data-id", index+10).appendTo(".main1Right>ul");
+          });
+        },
+      });
+
+      function ce(type, style) {
+        var ele = document.createElement(type);
+        Object.assign(ele.style, style);
+        return ele;
+      }
+    </script>
+  </body>
+</html>
