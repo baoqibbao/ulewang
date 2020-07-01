@@ -1,0 +1,138 @@
+.logo_Wrap{
+    width: 100%;
+    height: 99px;
+    border-bottom: solid 4px #a71b1c;
+}
+.logo_{
+    width: 1200px;
+    height: 75px;
+    margin: 0 auto;
+    padding: 12px 0;
+}
+.mainWrap{
+    width: 100%;
+    height: 570px;
+    background-color: #F7F7F7;
+    padding: 20px 0;
+}
+.main{
+    width: 950px;
+    height: 530px;
+    margin: 0 auto;
+    padding:30px 15px 0;
+    background: #fff;
+    color: #666;
+    position: relative;
+
+}
+.main .mainTop{
+    width: 920px;
+    height: 48px;
+    background: url(../img/title_tip.jpg) no-repeat center right;
+    border-bottom: 1px solid #f0f0f0;
+    color: #666;
+}
+.main .mainTop h3{
+    width: 140px;
+    height: 47px;
+    border: 1px solid #f0f0f0;
+    border-bottom: none;
+    margin-left: 30px;
+    line-height: 47px;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+.main form{
+    padding: 20px 0 0 220px;
+}
+.main form>p{
+    margin-top: 25px;
+    height: 40px;
+    position: relative;
+}
+.main form>p label{
+    width: 70px;
+    height: 40px;
+    float: left;
+    font-size: 14px;
+    line-height: 40px;
+    color: #999;
+}
+.main form>p input{
+    width: 278px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 10px;
+    border: 1px solid #cacaca;
+    color: #333;
+    font-size: 14px;
+    position: absolute;
+}
+.main form>p:nth-of-type(2) input{
+    width: 120px;
+}
+.main form>p:nth-of-type(2) a{
+    color: #FFF;
+    position: absolute;
+    line-height: 40px;
+    width: 120px;
+    height: 40px;
+    background: #fff;
+    text-align: center;
+    font-size: 14px;
+    left: 212px;
+    top: 0;
+    margin-left: 18px;
+    z-index: 1;
+    /* filter: alpha(opacity=0); */
+    text-decoration: none;
+    /* opacity: 0; */
+}
+.main form>p:last-of-type input{
+    height: 14px;
+    width: 14px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+.main form>p  span{
+    /* width: 278px; */
+    line-height: 38px;
+    font-size: 14px;
+    color: red;
+    position: absolute;
+    left: 382px;
+    display: none;
+}
+.main form>p:last-of-type span{
+    color: #AEAEAE;
+    font-size: 14px;
+    line-height: 24px;
+    position: absolute;
+    left: 90px;
+    display: inline;
+}
+.main form>p:last-of-type a{
+    color: #0033cc;
+    font-size: 14px;
+}
+.main form button{
+    background: url(/i/login/2016/0808/icon.jpg) 0 -196px no-repeat;
+    width: 298px;
+    height: 38px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    color: #666;
+    font-size: 16px;
+    background: #ddd;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin-left: 72px;
+    /* cursor: pointer; */
+}
+.main form button:hover{
+    color: #fff;
+    background-color: #a71b1c;
+}

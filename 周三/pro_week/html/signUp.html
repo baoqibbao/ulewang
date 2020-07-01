@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/signUp.css">
+    <link
+      rel="stylesheet"
+      href="https://at.alicdn.com/t/font_1909736_v12eq79pin.css"
+    />
+    <script src="../js/captcha-mini-master/demo/captcha.js"></script>
+    <script src="../js/md5.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../js/signUp.js"></script>
+  </head>
+  <body>
+    <div class="navTop"></div>
+    <div class="logo_Wrap">
+      <div class="logo_">
+        <img src="../img/logo.png" alt="" />
+      </div>
+    </div>
+    <div class="mainWrap">
+      <div class="main">
+        <div class="mainTop">
+          <h3>新用户注册</h3>
+        </div>
+        <form action="">
+          <p><label for="username">手机号码</label><input type="text" name="username" id="username" placeholder="请输入您的手机号"><span>手机号码输入错误！</span></p>
+          <p><label for="code">验证码</label><input type="text" name="code" id="code" placeholder="请输入验证码"><a href="javaScript:void(0)"><canvas width="120" height="40" id="captcha"></canvas></a><span>验证码输入错误！</span></p>
+          <p><label for="pwd">密码</label><input type="password" name="pwd" id="pwd" placeholder="请设置6-20位字符的密码"><span>需要同时含有数字和字母！</span></p>
+          <p><label for="pwdTo">确认密码</label><input type="password" name="pwdTo" id="pwdTo" placeholder="请再次输入密码"><span>两次密码输入不一致！</span></p>
+          <p><label for=""></label>
+            <input type="checkbox" name="ckb" id="ckb">
+            <span>我接受 
+            <a href="#">《隐私权政策》</a>  
+            <a href="#">《邮乐用户协议》</a> 
+            <a href="#">《中国邮政会员服务协议》</a>  及其相关的条款和条件
+          </span>
+          </p>
+          <button>立即注册</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footB"></div>
+    <script>
+      $(".navTop").load("./nav.html");
+      $(".footB").load("./foot.html");
+    </script>
+  </body>
+</html>

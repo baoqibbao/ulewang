@@ -1,0 +1,124 @@
+.logo_Wrap{
+    width: 100%;
+    height: 99px;
+    border-bottom: solid 4px #a71b1c;
+}
+.logo_{
+    width: 1200px;
+    height: 75px;
+    margin: 0 auto;
+    padding: 12px 0;
+}
+.mainWrap{
+    width: 100%;
+    height: 495px;
+}
+.main{
+    width: 1200px;
+    height: 495px;
+    background: #dfdfdf;
+    margin: 0 auto;
+    position: relative;
+}
+.main img{
+    width: 1200px;
+    height: 495px;
+}
+.signIn{
+    position: absolute;
+    width: 334px;
+    height: 487px;
+    color: #666;
+    font-size: 12px;
+    background-color: #fff;
+    border-radius: 3px;
+    top: 5px;
+    right: 130px;
+    z-index: 66;
+}
+.signIn h3{
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 18px 0 26px 15px;
+    display: block;
+}
+.signIn p{
+    width: 332px;
+    height: 60px;
+    color: #666;
+}
+.signIn p:nth-of-type(1) input,.signIn p:nth-of-type(2) input{
+    width: 287px;
+    height: 18px;
+    margin-left: 15px;
+    outline: none;
+    border: 1px solid #cacaca;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 0 10px 23px;
+    text-indent: 5px;
+    
+
+}
+.signIn p:nth-of-type(1) i{
+    position: absolute;
+    font-size: 24px;
+    top:72px;
+    left:18px;
+    color: #999;
+}
+.signIn p:nth-of-type(2) i{
+    position: absolute;
+    font-size: 24px;
+    top:132px;
+    left:18px;
+    color: #999;
+}
+.signIn form>div{
+    width: 321px;
+    height: 70px;
+    padding: 0 0 10px 12px;
+    font-size: 12px;
+    color: #666;
+}
+.signIn form>div input{
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin: 3px 3px 3px 4px;
+}
+.signIn form>div strong{
+    float: left;
+    width: 285px;
+    line-height: 20px;
+    font-weight: normal;
+}
+.signIn form>div strong a{
+    color: #1870bd;
+}
+.signIn form button {
+    width: 302px;
+    height: 38px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-left: 15px;
+    background: #d10208;
+    color: #fff;
+    border: 1px solid #a71427;
+    outline: none;
+}
+.signIn form button:hover{
+    background-color: #df030a;
+
+}
+.main form>p  span{
+    /* width: 278px; */
+    font-size: 12px;
+    color: red;
+    padding-left: 40px;
+    display: none;
+    
+}
