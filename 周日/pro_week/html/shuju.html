@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //底价来袭floorPrice
+        var uls = document.querySelectorAll(".slide-items .mod-cheaplist");
+        var lis = uls[0].querySelectorAll("li")
+        var floorPrice = [];
+        for(let i=0;i<lis.length;i++){
+            let obj = {};
+            obj.imgSrc=lis[i].querySelector(".prod-img img").src;
+            obj.proName=lis[i].querySelector(".prod-name").textContent;
+            obj.price=lis[i].querySelector(".prod-price strong").textContent
+            floorPrice.push(obj)
+        }
+        console.log(JSON.stringify(floorPrice))
+        //农民特卖Farm_pro      
+        var uls = document.querySelectorAll(".slide-items .mod-freshlist");
+        var lis = uls[0].querySelectorAll("li")
+        var Farm_pro = [];
+        for(let i=0;i<lis.length;i++){
+            let obj = {};
+            obj.imgSrc=lis[i].querySelector(".prod-img img").src;
+            obj.proName=lis[i].querySelector(".prod-name").textContent;
+            obj.price=lis[i].querySelector(".prod-price strong").textContent
+            Farm_pro.push(obj)
+        }
+        console.log(JSON.stringify(Farm_pro))
+        //e-loadsrcid
+        var uls = document.querySelectorAll(".mod-prodlist-c42 .e-loadsrcid")[0];
+        var lis = uls.querySelectorAll("li")
+        var pro_ = [];
+        for(let i=0;i<lis.length;i++){
+            let obj = {};
+            obj.imgSrc=lis[i].querySelector(".prod-img img").src;
+            obj.proName=lis[i].querySelector(".prod-name").textContent;
+            obj.price=lis[i].querySelector(".prod-price").innerText.split("¥")[1].trim();
+            pro_.push(obj)
+        }
+        console.log(JSON.stringify(pro_))
+           //分页
+           var ul = document.querySelector(".goodsListBlock ul");
+           var li = ul.querySelectorAll("li");
+           var dataArr = []
+           for(let i=0;i<li.length;i++){
+            var obj = {};
+            obj.imgSrc = li[i].querySelector(".img img").src
+            obj.title = li[i].querySelector(".name").textContent.trim();
+            obj.price  =li[i].querySelector(".price_zhekou strong").textContent;
+            obj.oldPrice = li[i].querySelector(".price_zhekou del").textContent
+            obj.shopname = li[i].querySelector(".shop_area>a").textContent;
+            obj.shopname = li[i].querySelector(".shop_area>a:nth-of-type(1)").textContent;
+            obj.address = li[i].querySelector(".shop_area>a:nth-of-type(2)").textContent;
+            obj.score =  li[i].querySelector(".pingfen span:nth-of-type(1)").textContent;
+            dataArr.push(obj)
+           }
+           console.log(JSON.stringify(dataArr))
+           
+    </script>
+</body>
+</html>

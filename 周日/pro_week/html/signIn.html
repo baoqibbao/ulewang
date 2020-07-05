@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/signIn.css" />
+    <link
+      rel="stylesheet"
+      href="https://at.alicdn.com/t/font_1909736_v12eq79pin.css"
+    />
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../js/md5.js"></script>
+    <script src="../js/signIn.js"></script>
+  </head>
+  <body>
+    <div class="navTop"></div>
+    <div class="logo_Wrap">
+      <div class="logo_">
+        <img src="../img/logo.png" alt="" />
+      </div>
+    </div>
+    <div class="mainWrap">
+      <div class="main">
+        <a href="#"><img src="../img/banner_signIn.jpg" alt="" /></a>
+        <div class="signIn">
+          <form action="">
+            <h3>登录</h3>
+            <p>
+              <i class="iconfont icon-shouji"></i>
+              <input type="text" name="username" id="username" placeholder="请输入账号"/>
+              <span>请输入正确的手机号码</span>
+            </p>
+            <p>
+              <i class="iconfont icon-mima "></i>
+              <input type="password" name="pwd" id="pwd" placeholder="请输入密码"/>
+            </p>
+            <div>
+              <input type="checkbox" />
+              <strong>
+                同意
+                <a href="#">《邮乐用户协议》</a> 
+                <a href="#"> 《隐私权政策》 </a> 
+                <a href="#">《积分授权及账户绑定条款》</a> 
+                <a href="#">《中国邮政会员服务协议》</a>
+                    
+                  
+                  及其相关的条款和条件
+              </strong>
+            </div>
+
+            <button>立即登录</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footB"></div>
+    <script>
+      $(".navTop").load("./nav.html");
+      $(".footB").load("./foot.html");
+    </script>
+  </body>
+</html>

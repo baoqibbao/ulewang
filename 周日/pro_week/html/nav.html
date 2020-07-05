@@ -1,0 +1,106 @@
+<link
+  rel="stylesheet"
+  href="https://at.alicdn.com/t/font_1909736_v12eq79pin.css"
+/>
+<link rel="stylesheet" href="../css/base.css" />
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<style>
+  .navWrap {
+    width: 100%;
+    height: 30px;
+    padding: 6px 0 0;
+    color: #666;
+    background-color: #f7f7f7;
+  }
+  .nav {
+    width: 1200px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    margin: 0 auto;
+  }
+  .navLeft {
+    float: left;
+    font-size: 12px;
+    color: #666;
+    font-family: Tahoma, "瀹嬩綋";
+  }
+  .nav i {
+    font-size: 14px;
+    color: #a71b1b;
+    font-weight: bold;
+    font-family: Tahoma, "瀹嬩綋";
+  }
+  .navRight {
+    float: right;
+  }
+  .navRight li {
+    float: left;
+    padding: 0 12px;
+    border-left: 1px solid #ccc;
+    font-family: Tahoma, "瀹嬩綋";
+  }
+  .navRight li:nth-child(1),
+  .navRight li:nth-child(2) {
+    border: none;
+  }
+  .navRight li:nth-of-type(2) a {
+    color: #0066cc;
+  }
+</style>
+
+<div class="navWrap">
+  <div class="nav">
+    <div class="navLeft">
+      <a href="./index.html"><i class="iconfont icon-zhuye"></i> 邮乐首页</a>
+    </div>
+    <div class="navRight">
+      <ul>
+        <li>您好，欢迎来到邮乐网！</li>
+        <li>
+          <a href="javaScript:void(0)">[请登录]</a
+          ><a href="javaScript:void(0)">[免费注册]</a>
+        </li>
+        <li><a href="#">我的邮乐</a></li>
+        <li>
+          <a href="#"><i class="iconfont icon-shouji"></i> 手机邮乐</a>
+        </li>
+        <li>
+          <a href="#"><i class="iconfont icon-caidan1"></i> 全部商品分类</a>
+        </li>
+        <li><a href="#">网站地图</a></li>
+        <li><a href="#">帮助中心</a></li>
+        <li>
+          <a href="#"><i class="iconfont icon-dianhua"></i> 11185</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+  var userN = localStorage.getItem("username");
+  $(() => {
+    if (userN) {
+      $(".navRight ul li").eq(1).find("a").eq(0).text(userN);
+      $(".navRight ul li").eq(1).find("a")[0].href = "javaScript:void(0)";
+      $(".navRight ul li").eq(1).find("a").eq(1).text("[注销]");
+    } else {
+      $(".navRight ul li").eq(1).find("a").eq(0).text("[请登录]");
+      $(".navRight ul li").eq(1).find("a").eq(1).text("[前往注册]");
+    }
+    $(".navRight ul li").eq(1).find("a").eq(0).on("click", click1Handler);
+    $(".navRight ul li").eq(1).find("a").eq(1).on("click", click2Handler);
+  });
+  function click1Handler(e) {
+    if (userN) return;
+    location.href = "./signIn.html";
+  }
+  function click2Handler(e) {
+    if (userN) {
+      localStorage.removeItem("username");
+      location.href = "./signIn.html";
+    } else {
+      location.href = "./signUp.html";
+    }
+  }
+</script>

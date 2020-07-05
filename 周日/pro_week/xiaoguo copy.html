@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+  </head>
+  <body>
+    <script>
+      /* $(()=>{
+      $("<div class='detailsImgBox'></div>").css({width:"398px",height:"497px",margin:"20px 20px 0",position:"relative",}).appendTo("body")
+      $("<img class='detailsImg'>").css({width:"398px",height:"497px",margin:"20px 20px 0",position:"relative",}).appendTo($(".detailsImgBox"))
+      $("<div class='detailsImg'></div>").css({width:"398px",height:"497px",margin:"20px 20px 0",position:"relative",}).appendTo($(".detailsImgBox"))
+    }) */
+      var str =
+        "https://pic.ulecdn.com/pic/user_800141207/product/prd20200302/9caf94d4ba674bef_p450x450_y.jpg,https://pic.ulecdn.com/pic/user_800141207/product/prd20200228/2c675954ba24c428_p750x750_y.jpg,https://pic.ulecdn.com/pic/user_800141207/product/prd20200228/6e85774c7ebee84c_p750x750_y.jpg";
+      var BigimgSrc = str.split(",");
+      var str1 =
+        "https://pic.ulecdn.com/pic/user_800141207/product/prd20200302/9caf94d4ba674bef_p450x450_m.jpg,https://pic.ulecdn.com/pic/user_800141207/product/prd20200228/2c675954ba24c428_p750x750_m.jpg,https://pic.ulecdn.com/pic/user_800141207/product/prd20200228/6e85774c7ebee84c_p750x750_m.jpg";
+
+      var MinimgSrc = str1.split(",");
+      var imgList = [];
+      var minImgList = [];
+      var cover,minBox,maxBox,prev;
+      //  console.log(MinimgSrc[0].replace(/m.jpg/,"11111111111111111"))
+      //  console.log(MinimgSrc)
+      detailsImgBox();
+      function detailsImgBox() {
+        var ImgBoxWrap = ce("div", {
+          width: "398px",
+          height: "497px",
+          margin: "20px 20px 0",
+          position: "relative",
+        });
+        createBigBox(ImgBoxWrap)
+        createMinImgBox(ImgBoxWrap);
+
+        document.body.appendChild(ImgBoxWrap);
+      }
+      function createBigBox(parent){
+         minBox = ce("div",{
+          width:"398px",
+          height:"398px",
+          position:"relative",
+          background:`url(${BigimgSrc[0]}) no-repeat 0px 0px`,
+          backgroundSize:"100% 100%"
+        })
+         maxBox = ce("div",{
+          width:"398px",
+          height:"398px",
+          position:"absolute",
+          left:"438px",
+          top:"0",
+          background:`url(${BigimgSrc[0]}) no-repeat 0px 0px`,
+          backgroundSize:"200% 200%",
+          zIndex:"999",
+          display:"none"
+        })
+         cover =ce("div",{
+          width:"199px",
+          height:"199px",
+          position:"absolute",
+          top:"0",
+          left:"0",
+          zIndex:"888",
+          background:"rgba(0,0,0,0.1)",
+          display:"none"
+        })
+        minBox.appendChild(cover)
+        parent.appendChild(minBox)
+        parent.appendChild(maxBox)
+        minBox.addEventListener("mouseenter",mouseHandler)
+
+      }
+      function mouseHandler(e){
+       var min= minBox.getBoundingClientRect();
+        if(e.type =="mouseenter"){
+          maxBox.style.display=cover.style.display="block";
+          minBox.addEventListener("mouseleave",mouseHandler);
+          minBox.addEventListener("mousemove",mouseHandler)
+        }else if(e.type =="mousemove"){
+          X=e.clientX-min.x-99;
+          Y=e.clientY-min.y-99;
+          if(X>199) X = 199;
+          if(X<0) X = 0;
+          if(Y>199) Y = 199;
+          if(Y<0) Y = 0;
+          cover.style.left = X+"px";
+          cover.style.top = Y+"px";
+          maxBox.style.backgroundPositionX = -X*2+"px";
+          maxBox.style.backgroundPositionY = -Y*2+"px";
+        }else if(e.type =="mouseleave"){
+          maxBox.style.display=cover.style.display="none";
+          minBox.addEventListener("mouseleave",mouseHandler);
+          minBox.addEventListener("mousemove",mouseHandler)
+        }
+      }
+      function createMinImgBox(parent) {
+        var imgBox = ce("div", {
+          width: "398px",
+          height: "64px",
+          fontSize: 0,
+          textAlign: "center",
+          paddingBottom: "20px",
+          position: "absolute",
+          top: "420px",
+          left: "0",
+        });
+        var ul = ce("ul");
+        MinimgSrc.forEach(function (item,index) {
+          var li = ce("li", {
+            float: "left",
+            width:"76px",
+          });
+          var img = new Image;
+          img.style.width = "56px";
+          img.style.height = "56px";
+          img.style.padding = "1px";
+          img.src = item;
+          img.style.border =index==0?"2px solid #c00":"transparent";
+          if(index==0) prev =img;
+           minImgList.push(img);
+          li.appendChild(img);
+          ul.appendChild(li);
+          
+        });
+       
+        imgBox.appendChild(ul);
+        imgBox.addEventListener("mouseover",imgBoxMouserHandler)
+        parent.appendChild(imgBox)
+        
+      }
+      function imgBoxMouserHandler(e){
+        if(e.target.nodeName!=="IMG") return;
+        if(prev){
+          prev.style.border="2px solid transparent";
+        }
+        prev= e.target;
+        prev.style.border="2px solid #c00";
+        var src = e.target.src.replace(/m.jpg/,"y.jpg")
+        minBox.style.backgroundImage =maxBox.style.backgroundImage =`url(${src})`;
+
+      }
+      function ce(type, style) {
+        var ele = document.createElement(type);
+        Object.assign(ele.style, style);
+        return ele;
+      }
+    </script>
+  </body>
+</html>

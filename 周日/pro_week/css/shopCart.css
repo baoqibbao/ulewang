@@ -1,0 +1,375 @@
+.navWrap{
+    width: 100%;
+    height: 30px;
+    padding: 6px 0 0;
+    color:#666;
+    background-color: #f7f7f7;
+}
+.nav{
+    width: 950px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    margin: 0 auto;
+}
+.navLeft{
+    float: left;
+    font-size: 12px;
+    color: #666;
+    font-family: Tahoma,"瀹嬩綋";
+}
+.nav i{
+    font-size: 14px;
+    color: #a71b1b;
+    font-weight: bold;
+    font-family: Tahoma,"瀹嬩綋";
+}
+.navRight{
+    float: right;
+}
+.navRight li{
+    float: left;
+    padding: 0 12px;
+    border-left: 1px solid #ccc;
+    font-family: Tahoma,"瀹嬩綋";
+}
+.navRight li:nth-child(1),.navRight li:nth-child(2){
+    border:none;
+}
+.navRight li:nth-of-type(2) a{
+    color: #0066cc;
+}
+/* 以上nav */
+.toplogoWrap{
+    width: 100%;
+    height: 99px;
+    border-bottom: solid 4px #a71b1c;
+}
+.toplogo{
+    width: 950px;
+    height: 75px;
+    padding: 12px 0;
+    margin: 0 auto;
+}
+.toplogo a{
+    float: left;
+    height: 75px;
+}
+.toplogo p{
+    float: right;
+    width: 570px;
+    height: 35px;
+    margin-top: 20px;
+    background: url(../img/cart_tit_new.png) no-repeat;
+    background-position: 0 0;
+}
+/* cartTitWrap */
+.cartTopWrap {
+    width: 100%;
+    height: 36px;
+    padding-top: 10px;
+    /* overflow: hidden; */
+}
+.cartTop {
+    width: 950px;
+    height: 36px;
+    font-size: 12px;
+    color: #666;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+    /* clear: both; */
+    /* overflow: hidden; */
+}
+.cartTop h3{
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    padding:0 25px ;
+}
+.cartTop span{
+
+    line-height: 26px;
+    padding-top: 10px;
+    font-size: 16px;
+    color: #c7181d;
+}
+.cartTop a{
+    float: right;
+    width: 60px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+    color: #0066cc;
+
+    padding-left: 21px ;
+}
+/* cartTit */
+
+.cartTitWrap{
+    width: 100%;
+    height: 80px;
+}
+.cartTit{
+    width: 950px;
+    height: 36px;
+    margin: 0 auto;
+    padding-top:44px;
+}
+.cartTit ul{
+    height: 36px;
+    background-color: #f3f3f3;
+    padding: 0 10px;
+}
+.cartTit ul li{
+    float: left;
+    line-height: 36px;
+    font-size: 12px;
+    text-align: left;
+    color: #666;
+}
+.cartTit ul li:nth-of-type(1){
+    width: 34px;
+}
+.cartTit ul li:nth-of-type(2){
+    width: 490px;
+}
+.cartTit ul li:nth-of-type(3){
+    width: 100px;
+}
+.cartTit ul li:nth-of-type(4){
+    width: 140px;
+}
+.cartTit ul li:nth-of-type(5){
+    width: 100px;
+}
+.cartTit ul li:nth-of-type(6){
+    width: 60px;
+}
+
+.cartMianWrap{
+    width: 100%;
+    padding-top: 10px;
+  }
+  .cartMian {
+    width: 950px ;
+    margin: 0 auto;
+  }
+  .cartMian>ul{
+    width: 950px ;
+    height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #666;
+  }
+  .cartMian>ul li{
+    float: left;
+  }
+  .cartMian>ul li:nth-of-type(1){
+    width:34px;
+  }
+  .cartMian>ul li:nth-of-type(1) input{
+    margin: 11px 0;
+  }
+  .cartMian>ul li:nth-of-type(2){
+    padding-left: 21px;
+    line-height: 34px;
+  }
+  .cartCentent{
+    width: 950px;
+    padding: 0 9px;
+    border: solid 1px #e8e8e8;
+    color: #666;
+    font-size: 12px;
+    overflow: hidden;
+  }
+  .cartCentent>ul {
+    padding: 15px 0;
+    overflow: hidden;
+  }
+  .cartCentent>ul li{
+    float: left;
+    font-size: 12px;
+    color: #666;
+  }
+  .cartCentent>ul li:nth-of-type(1){
+    width: 34px;
+  }
+  .cartCentent>ul li:nth-of-type(1) input{
+    margin: 3px;
+  }
+  .cartCentent>ul li:nth-of-type(2){
+    width: 80px;
+  }
+  .cartCentent>ul li:nth-of-type(3){
+    width: 180px;
+    padding: 0 15px;
+    
+  }
+  .cartCentent>ul li:nth-of-type(4){
+    width: 140px;
+    padding: 0 10px;
+    color: #999;
+  }
+  .cartCentent>ul li:nth-of-type(5){
+    width: 100px;
+  }
+  .cartCentent>ul li:nth-of-type(6){
+    width: 180px;
+  }
+  .cartCentent>ul li:nth-of-type(7){
+    width:100px;
+  }
+  .cartCentent>ul li:nth-of-type(8){
+    width: 60px;
+  }
+  .cartCentent>ul li:nth-of-type(8) p{
+   cursor: pointer;
+   /* color: red; */
+  }
+  .cartCentent>ul li:nth-of-type(8) p:nth-of-type(1){
+    color: #0066cc;
+  }
+
+/* count */
+.pro_countWrap{
+    width: 100%;
+    height: 60px;
+    background-color: #f3f3f3;
+}
+.pro_count{
+    width: 950px;
+    height: 40px;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+.pro_count ul li{
+    float: left;
+    width: 100px;
+    font-size: 12px;
+    color: #666;
+}
+.pro_count ul li p{
+    width: 100px;
+    line-height: 20px;
+}
+.pro_count ul li:nth-of-type(4){
+    width: 160px;
+}
+.pro_count ul li:nth-of-type(4) p{
+    float: left;
+}
+.pro_count ul li:nth-of-type(4) p:nth-of-type(1){
+    width: 60px;
+    line-height: 20px;
+}
+.pro_count ul li:nth-of-type(4) p:nth-of-type(2){
+    font-size: 36px;
+    line-height: 40px;
+    color: #c42e15;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 以下foot */
+.footWrap{
+    width: 100%;
+    font-family: "瀹嬩綋";
+    padding: 20px 0;
+    font-size: 12px;
+    clear: both;
+}
+.footTop{
+    width: 1000px;
+    height: 56px;
+    line-height: 56px;
+    margin: 0 auto;
+    padding: 17px 0;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+}
+.footTop ul{
+    height: 69px;
+} 
+.footTop li {
+    float: left;
+    height: 58px;
+    padding: 11px 13px 0 13px;
+    background: url("../img/suxian_03.gif") no-repeat;
+    background-position-y: 11px;
+}
+.footTop li:first-child{
+    background: none;
+}
+.footTop li img{
+    height: 36px;
+}
+.footTop li:last-child img{
+    margin-top: -25px;
+    height: 85px;
+}
+.footCenter{
+    width: 1000px;
+    height: 206px;
+    padding: 10px 0 20px;
+    margin: 0 auto;
+    border-bottom: solid 1px #ddd;
+
+}
+.footCenter li{
+    float: left;
+    width: 120px;
+    padding:5px 40px 0 0 ;
+}
+.footCenter li h4{
+    margin: 0 0 5px;
+    font-size: 12px;
+    color: #666;
+}
+.footCenter li a{
+    display: block;
+    font-size: 12px;
+    height: 21px;
+    line-height: 21px;
+    color: #888;
+}
+.footBottom{
+    width: 1000px;
+    height: 41px;
+    padding: 15px 0 5px;
+    font-size: 12px;
+    color: #999;
+    margin: 0 auto;
+}
+.footBottom li{
+    float: left;
+    margin-right: 9px;
+}
+.footBottom p{
+    height: 20px;
+    line-height: 20px;
+    clear: both;
+}
